@@ -6,12 +6,25 @@ import java.util.Random;
  * Created by juanxxiii on 19/01/2017.
  */
 public class HiloCorrer extends Thread {
-    @Override
-    public void run() {
-      this.correr();
+    private ControladorHilos con;
+    public HiloCorrer(ControladorHilos con) {
+        this.con = con;
     }
 
-    public synchronized void correr(){
+    @Override
+    public void run() {
+        try {
+            this.correr();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public synchronized void correr() throws InterruptedException {
+        while(con.isEmpezado()){
+            wait();
+        }
+        con.empezar();
         System.out.println("El hilo " + Thread.currentThread().getName() + " ha empezado");
         try {
             Thread.sleep((long)new Random().nextInt(1000));
@@ -24,6 +37,7 @@ public class HiloCorrer extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        notifyAll();
+        con.acabar();
     }
 }
