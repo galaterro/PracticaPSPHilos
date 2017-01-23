@@ -7,6 +7,7 @@ import java.util.Random;
  */
 public class HiloCorrer extends Thread {
     private ControladorHilos con;
+    private int numero;
     public HiloCorrer(ControladorHilos con) {
         this.con = con;
     }
@@ -14,30 +15,15 @@ public class HiloCorrer extends Thread {
     @Override
     public void run() {
         try {
-            this.correr();
+            con.correr(Thread.currentThread().getName());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public synchronized void correr() throws InterruptedException {
-        while(con.isEmpezado()){
-            wait();
-        }
-        con.empezar();
-        System.out.println("El hilo " + Thread.currentThread().getName() + " ha empezado");
-        try {
-            Thread.sleep((long)new Random().nextInt(1000));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("El hilo " + Thread.currentThread().getName() + " ha finalizado");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        notifyAll();
-        con.acabar();
+    public void setNumero(int i){
+        this.numero = i;
     }
+
+
 }

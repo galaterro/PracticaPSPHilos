@@ -12,6 +12,7 @@ public class Relevos {
             hilos[i] = new HiloCorrer(con);
             hilos[i].setName("Corredor " + (i+1));
             hilos[i].start();
+
         }
     }
 }
