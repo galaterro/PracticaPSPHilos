@@ -6,11 +6,12 @@ package es.adrigala.ej1;
  */
 public class Relevos {
     public Relevos() throws InterruptedException {
-        Thread hilos;
-        for (int i = 0; i < 4; i++) {
-            hilos = new HiloCorrer(i + 1);
-            hilos.setName("Corredor " + (i+1));
-            hilos.run();
+        Thread[] hilos = new Thread[4];
+        ControladorHilos con = new ControladorHilos();
+        for (int i = 0; i < hilos.length; i++) {
+            hilos[i] = new HiloCorrer(con);
+            hilos[i].setName("Corredor " + (i+1));
+            hilos[i].start();
 
         }
     }
