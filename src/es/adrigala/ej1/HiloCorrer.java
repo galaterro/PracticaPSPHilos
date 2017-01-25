@@ -3,7 +3,7 @@ package es.adrigala.ej1;
 import java.util.Random;
 
 /**
- * Created by juanxxiii on 19/01/2017.
+ * Created by Galaterro on 19/01/2017.
  */
 public class HiloCorrer extends Thread {
     private int numero = 1;
