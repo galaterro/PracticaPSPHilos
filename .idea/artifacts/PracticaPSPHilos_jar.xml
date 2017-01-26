@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PracticaPSPHilos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PracticaPSPHilos_jar</output-path>
+    <root id="archive" name="PracticaPSPHilos.jar">
+      <element id="module-output" name="PracticaPSPHilos" />
+    </root>
+  </artifact>
+</component>
