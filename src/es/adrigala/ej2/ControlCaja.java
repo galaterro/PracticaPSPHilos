@@ -1,5 +1,7 @@
 package es.adrigala.ej2;
 
+import java.util.Random;
+
 /**
  * Created by Galaterro on 30/01/2017.
  */
@@ -7,6 +9,7 @@ public class ControlCaja {
     private int totalCaja;
     private int cajas[];
     private int libres;
+    private int dinero;
 
     public ControlCaja(int n){
         this.totalCaja = n;
@@ -36,9 +39,14 @@ public class ControlCaja {
 
 
     synchronized public void salida(int plaza) {
+        pagar(new Random().nextInt(15));
         cajas[plaza] = 0;
         libres++;
         notify();
+    }
+
+    public void pagar(int pagado){
+        dinero += pagado;
     }
 
     public void estadoCaja() {
@@ -50,6 +58,6 @@ public class ControlCaja {
                 System.out.print("Caja nº" + (i + 1) + " cliente " + cajas[i] + ". \n");
             }
         }
-        System.out.println("");
+        System.out.println("Total Ganancias: " + dinero);
     }
 }
