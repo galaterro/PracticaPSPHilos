@@ -17,7 +17,7 @@ public class Ejecutador {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Seleccione una opción: ");
             System.out.println("1.- Ejercicio 1");
-            System.out.println("2.- ejercicio 2");
+            System.out.println("2.- Ejercicio 2");
             System.out.println("3.- Ejercicio 3");
             System.out.println("4.- Ejercicio 4");
             System.out.println("5.- Salir");
