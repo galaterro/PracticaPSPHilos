@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class HiloCorrer extends Thread {
     private ControladorHilos con;
-    private int numero;
+
     public HiloCorrer(ControladorHilos con) {
         this.con = con;
     }
@@ -20,10 +20,5 @@ public class HiloCorrer extends Thread {
             e.printStackTrace();
         }
     }
-
-    public void setNumero(int i){
-        this.numero = i;
-    }
-
-
 }
+

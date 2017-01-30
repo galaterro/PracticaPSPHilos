@@ -8,14 +8,16 @@ import java.io.InputStreamReader;
  * Created by Galaterro on 26/01/2017.
  */
 public class SuperMarket {
-    private int cajas;
+    private int totalCajas;
     private int clientes;
+    private int resultados;
     private Thread[] hilos;
+    private ControlCaja[] controlCaja;
     public SuperMarket() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Introduzca el número de cajas disponibles:");
+        System.out.println("Introduzca el número de totalCajas disponibles:");
         try {
-            cajas = Integer.parseInt(br.readLine());
+            totalCajas = Integer.parseInt(br.readLine());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,9 +27,16 @@ public class SuperMarket {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        hilos = new Cliente[clientes];
-
-
-
+        controlCaja = new ControlCaja[totalCajas];
+        hilos = new Thread[clientes];
+        for (int i = 0; i < hilos.length; i++) {
+            hilos[i] = new Cliente(controlCaja);
+            hilos[i].setName("Cliente " + (i+1));
+            hilos[i].start();
+        }
+/*        for (int i = 0; i < controlCaja.length; i++) {
+            resultados += controlCaja[i].getTotalCaja();
+        }
+        System.out.println("Total ganancias: " + resultados);*/
     }
 }
