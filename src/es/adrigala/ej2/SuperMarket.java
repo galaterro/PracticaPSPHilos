@@ -12,7 +12,7 @@ public class SuperMarket {
     private int clientes;
     private int resultados;
     private Thread[] hilos;
-    private ControlCaja[] controlCaja;
+    private ControlCaja controlCaja;
     public SuperMarket() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Introduzca el número de totalCajas disponibles:");
@@ -27,10 +27,10 @@ public class SuperMarket {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        controlCaja = new ControlCaja[totalCajas];
+        controlCaja = new ControlCaja(totalCajas);
         hilos = new Thread[clientes];
         for (int i = 0; i < hilos.length; i++) {
-            hilos[i] = new Cliente(controlCaja);
+            hilos[i] = new Cliente(controlCaja, (i + 1));
             hilos[i].setName("Cliente " + (i+1));
             hilos[i].start();
         }
