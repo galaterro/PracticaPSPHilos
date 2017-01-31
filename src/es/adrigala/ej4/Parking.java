@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author bote
+ * @author Galaterro
  */
 public class Parking {
 

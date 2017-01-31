@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.concurrent.Semaphore;
 
 /**
- * Created by juanxxiii on 19/01/2017.
+ * Created by Galaterro on 19/01/2017.
  */
 public class Ejecutador {
     public static void main(String[] args) throws IOException {
