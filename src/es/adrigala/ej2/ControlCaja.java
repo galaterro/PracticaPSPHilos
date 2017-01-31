@@ -5,9 +5,9 @@ import java.util.Random;
 /**
  * Created by Galaterro on 30/01/2017.
  */
-public class ControlCaja {
-    private int totalCaja;
-    private int cajas[];
+class ControlCaja {
+    private final int totalCaja;
+    private final int[] cajas;
     private int libres;
     private int dinero;
 
@@ -26,7 +26,7 @@ public class ControlCaja {
         estadoCaja();
 
         while (libres <= 0) {
-            System.out.println("\tClienteDos " + cliente + " esperando. Las cajas están llenas");
+            System.out.println("\tCliente " + cliente + " esperando. Las cajas están llenas");
             wait();
         }
         while (cajas[plaza] != 0) {
@@ -45,7 +45,7 @@ public class ControlCaja {
         notify();
     }
 
-    public void pagar(int pagado){
+    private void pagar(int pagado){
         dinero += pagado;
     }
 
@@ -53,9 +53,9 @@ public class ControlCaja {
         System.out.print("CajaDos: \n");
         for (int i=0; i<totalCaja; i++) {
             if(cajas[i] == 0){
-                System.out.println("CajaDos nº " + (i + 1) + " vacia. ");
+                System.out.println("Caja nº " + (i + 1) + " vacia. ");
             }else if(cajas[i]>0){
-                System.out.print("CajaDos nº" + (i + 1) + " cliente " + cajas[i] + ". \n");
+                System.out.print("Caja nº" + (i + 1) + " cliente " + cajas[i] + ". \n");
             }
         }
         System.out.println("Total Ganancias: " + dinero);

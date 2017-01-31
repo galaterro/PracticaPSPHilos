@@ -9,11 +9,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class CajaDos implements Runnable {
+class CajaDos implements Runnable {
 
-    private SuperMarketDos supermarket;
-    private int numero;
-    ClienteDos clienteDos = null;
+    private final SuperMarketDos supermarket;
+    private final int numero;
+    private ClienteDos clienteDos = null;
 
     public CajaDos(SuperMarketDos supermarket, int numero) {
         this.supermarket = supermarket;
@@ -21,7 +21,6 @@ public class CajaDos implements Runnable {
     }
 
     public void setThread(Thread thread) {
-        Thread thread1 = thread;
     }
 
     @Override
@@ -48,9 +47,8 @@ public class CajaDos implements Runnable {
         System.out.println("La caja: " + this.numero + " ha sido cerrada");
     }
 
-    public int ramdomTiempo() {
+    private int ramdomTiempo() {
 
-        int numeroAleatorio = (int) (Math.random() * 3000);
-        return numeroAleatorio;
+        return (int) (Math.random() * 3000);
     }
 }

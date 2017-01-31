@@ -10,12 +10,10 @@ import java.io.InputStreamReader;
 public class SuperMarket {
     private int totalCajas;
     private int clientes;
-    private int resultados;
-    private Thread[] hilos;
-    private ControlCaja controlCaja;
+
     public SuperMarket() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Introduzca el número de totalCajas disponibles:");
+        System.out.println("Introduzca el número de Cajas disponibles:");
         try {
             totalCajas = Integer.parseInt(br.readLine());
         } catch (IOException e) {
@@ -27,16 +25,12 @@ public class SuperMarket {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        controlCaja = new ControlCaja(totalCajas);
-        hilos = new Thread[clientes];
+        ControlCaja controlCaja = new ControlCaja(totalCajas);
+        Thread[] hilos = new Thread[clientes];
         for (int i = 0; i < hilos.length; i++) {
             hilos[i] = new Cliente(controlCaja, (i + 1));
-            hilos[i].setName("ClienteDos " + (i+1));
+            hilos[i].setName("Cliente " + (i+1));
             hilos[i].start();
         }
-/*        for (int i = 0; i < controlCaja.length; i++) {
-            resultados += controlCaja[i].getTotalCaja();
-        }
-        System.out.println("Total ganancias: " + resultados);*/
     }
 }

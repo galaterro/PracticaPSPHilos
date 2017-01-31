@@ -11,10 +11,10 @@ import java.util.Random;
  *
  * @author Galaterro
  */
-public class Coches extends Thread{
+class Coches extends Thread{
     
-    private int id;
-    private ControlParking control;
+    private final int id;
+    private final ControlParking control;
     private boolean aparcado = false;
     
     Coches (int id, ControlParking control) {

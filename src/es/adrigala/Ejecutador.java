@@ -8,12 +8,11 @@ import es.adrigala.ej4.Parking;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.concurrent.Semaphore;
 
 /**
  * Created by Galaterro on 19/01/2017.
  */
-public class Ejecutador {
+class Ejecutador {
     public static void main(String[] args) throws IOException {
         int selector = 0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,11 +28,7 @@ public class Ejecutador {
                     System.out.println("*************");
                     System.out.println("Ejercicio 1");
                     System.out.println("*************");
-                    try {
-                        Relevos ej1 = new Relevos();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Relevos ej1 = new Relevos();
                     break;
                 case 2:
                     System.out.println("*************");

@@ -11,9 +11,9 @@ import java.util.Scanner;
 
 public class SuperMarketDos {
 
-    private ArrayList<ClienteDos> clientesCola;
-    private ArrayList<ClienteDos> clientesListos;
-    private ArrayList<CajaDos> cajaDoss;
+    private final ArrayList<ClienteDos> clientesCola;
+    private final ArrayList<ClienteDos> clientesListos;
+    private final ArrayList<CajaDos> cajaDoss;
 
     public SuperMarketDos() {
         cajaDoss = new ArrayList();
@@ -53,11 +53,11 @@ public class SuperMarketDos {
         return clienteDos;
     }
 
-    public void nuevoCliente(ClienteDos c) {
+    private void nuevoCliente(ClienteDos c) {
         this.clientesCola.add(c);
     }
 
-    public void nuevaCaja(CajaDos cajaDos) {
+    private void nuevaCaja(CajaDos cajaDos) {
         this.cajaDoss.add(cajaDos);
         Thread hiloCaja = new Thread(cajaDos);
         cajaDos.setThread(hiloCaja);

@@ -8,7 +8,6 @@ package es.adrigala.ej3;
 
 public class ClienteDos {
     private int numero;
-    private long tiempo;
 
     public ClienteDos(int numero) {
         this.numero = numero;
@@ -23,7 +22,6 @@ public class ClienteDos {
     }
 
     public void setTiempo(long tiempo) {
-        this.tiempo = tiempo;
     }
 
 

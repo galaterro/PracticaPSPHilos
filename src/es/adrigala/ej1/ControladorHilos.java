@@ -3,9 +3,9 @@ package es.adrigala.ej1;
 import java.util.Random;
 
 /**
- * Created by juanxxiii on 23/01/2017.
+ * Created by Galaterro on 23/01/2017.
  */
-public class ControladorHilos {
+class ControladorHilos {
 
     private int control = 1;
 

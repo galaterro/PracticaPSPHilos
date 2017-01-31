@@ -5,7 +5,7 @@ package es.adrigala.ej1;
  * Created by juanxxiii on 19/01/2017.
  */
 public class Relevos {
-    public Relevos() throws InterruptedException {
+    public Relevos() {
         Thread[] hilos = new Thread[4];
         ControladorHilos con = new ControladorHilos();
         for (int i = 0; i < hilos.length; i++) {

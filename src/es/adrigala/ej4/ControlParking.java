@@ -6,9 +6,9 @@
 package es.adrigala.ej4;
 
 
-public class ControlParking {
-    private int n_plazas;
-    private int plazas[];
+class ControlParking {
+    private final int n_plazas;
+    private final int[] plazas;
     private int libres;
     
     public ControlParking(int n){
