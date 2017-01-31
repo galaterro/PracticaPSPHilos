@@ -50,7 +50,7 @@ class ControlCaja {
     }
 
     public void estadoCaja() {
-        System.out.print("CajaDos: \n");
+        System.out.print("Caja: \n");
         for (int i=0; i<totalCaja; i++) {
             if(cajas[i] == 0){
                 System.out.println("Caja nº " + (i + 1) + " vacia. ");
