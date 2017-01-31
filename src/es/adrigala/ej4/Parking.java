@@ -13,10 +13,8 @@ import java.util.Scanner;
  */
 public class Parking {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+
+    public Parking() {
         int coches = 0;
         int plazas = 0;
         Scanner scan = new Scanner(System.in);

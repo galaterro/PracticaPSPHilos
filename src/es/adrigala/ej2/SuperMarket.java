@@ -31,7 +31,7 @@ public class SuperMarket {
         hilos = new Thread[clientes];
         for (int i = 0; i < hilos.length; i++) {
             hilos[i] = new Cliente(controlCaja, (i + 1));
-            hilos[i].setName("Cliente " + (i+1));
+            hilos[i].setName("ClienteDos " + (i+1));
             hilos[i].start();
         }
 /*        for (int i = 0; i < controlCaja.length; i++) {

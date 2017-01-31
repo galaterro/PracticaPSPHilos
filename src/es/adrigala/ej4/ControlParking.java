@@ -5,10 +5,7 @@
  */
 package es.adrigala.ej4;
 
-/**
- *
- * @author bote
- */
+
 public class ControlParking {
     private int n_plazas;
     private int plazas[];
@@ -51,9 +48,9 @@ public class ControlParking {
         System.out.print("Parking: ");
         for (int i=0; i<n_plazas; i++) {
             if(plazas[i] == 0){
-                System.out.println("Plaza nº " + (i + 1) + " vacia. ");
+                System.out.println("Plaza de aparcamiento nº " + (i + 1) + " vacia.");
             }else if(plazas[i]>0){             
-                System.out.print("Plaza nº" + (i + 1) + " coche " + plazas[i] + ". ");
+                System.out.print("Plaza de aparcamiento nº" + (i + 1) + " coche " + plazas[i] + ". ");
             }
         }
         System.out.println("");
